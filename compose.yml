@@ -12,6 +12,7 @@ services:
       FLAG: "bctf{redacted_for_sharing_purposes}"
       PUBLIC_IP: "127.0.0.1"
       SHARED_SECRET: "changeme12345"
+      KILL_TIME_MINUTES: "30"
     ports:
       - "31337:31337"
       - "8545:8545"

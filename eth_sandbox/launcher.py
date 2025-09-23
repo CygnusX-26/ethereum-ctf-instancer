@@ -47,7 +47,6 @@ def check_ticket(ticket: str) -> Ticket:
         print('PoW: sha256(sha256(ticket) + ticket) must start with 0000000')
         print('(digest was ' + m.hexdigest() + ')')
         return None
-    print('This ticket is your TEAM SECRET. Do NOT SHARE IT!')
     return Ticket(challenge_id=CHALLENGE_ID, team_id=ticket)
 
     # if ENV == "dev":
@@ -102,6 +101,8 @@ def new_launch_instance_action(
         if not ticket:
             print("invalid ticket!")
             return 1
+        
+        print("This ticket is your TEAM SECRET. Do NOT SHARE IT!")
 
         if ticket.challenge_id != CHALLENGE_ID:
             print("invalid ticket!")
