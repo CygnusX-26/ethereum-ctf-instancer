@@ -43,8 +43,8 @@ def check_ticket(ticket: str) -> Ticket:
     digest1 = m.digest()
     m = hashlib.sha256()
     m.update(digest1 + ticket.encode('ascii'))
-    if not m.hexdigest().startswith('0000000'):
-        print('PoW: sha256(sha256(ticket) + ticket) must start with 0000000')
+    if not m.hexdigest().startswith('000000'):
+        print('PoW: sha256(sha256(ticket) + ticket) must start with 000000')
         print('(digest was ' + m.hexdigest() + ')')
         return None
     return Ticket(challenge_id=CHALLENGE_ID, team_id=ticket)

@@ -8,7 +8,7 @@ for i in range(x,x+20000000000):
 	digest1 = m.digest()
 	m = hashlib.sha256()
 	m.update(digest1 + ticket.encode('ascii'))
-	if m.hexdigest().startswith('0000000'):
+	if m.hexdigest().startswith('000000'):
 		print(i)
 		break
 print("You can reuse this ticket the next time you need an instance.")
